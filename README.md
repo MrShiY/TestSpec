@@ -20,8 +20,26 @@ git clone <repository-url>
 cd TestSpec
 ```
 
-2. 开始使用
-（根据项目需求添加具体步骤）
+2. 配置环境变量
+```bash
+# 复制环境变量模板文件
+cp .env.example .env
+
+# 编辑 .env 文件，填入你的 API 密钥
+# OPENAI_API_KEY=your-actual-api-key-here
+```
+
+3. 安装依赖
+```bash
+npm install
+# 或
+yarn install
+```
+
+4. 运行项目
+```bash
+npx ts-node test.ts
+```
 
 ## 使用说明
 

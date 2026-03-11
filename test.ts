@@ -2,8 +2,10 @@ import OpenAI from "openai";
 
 async function AskQuestion(question: string) {
   try {
-    const openaiApiKey =
-      "sk-proj-xxx";
+    const openaiApiKey = process.env.OPENAI_API_KEY;
+    if (!openaiApiKey) {
+      throw new Error("OPENAI_API_KEY environment variable is not set");
+    }
     const openai = new OpenAI({
       apiKey: openaiApiKey,
       timeout: 900 * 1000, // 为了支持long run的任务, 超时时间设置15分钟
